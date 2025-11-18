@@ -1,33 +1,23 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix="c" uri= "http://java.sun.com/jsp/jstl/core" %>
 
 <t:pageTemplate pageTitle="Cars">
     <h1>Cars</h1>
     <div class="container text-center">
+        <c:forEach var="car" items="${Cars}">
         <div class="row">
             <div class="col">
-                Car1
+                    ${car.licensePlate}
             </div>
             <div class="col">
-                User1
+                    ${car.parkingSpot}
             </div>
             <div class="col">
-                Spot1
+                    ${car.ownerName}
             </div>
         </div>
-    </div>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                Car2
-            </div>
-            <div class="col">
-                User2
-            </div>
-            <div class="col">
-                Spot2
-            </div>
-        </div>
+        </c:forEach>
     </div>
     <h5>Free parking spots: ${numberOfFreeParkingSpots}</h5>
 </t:pageTemplate>

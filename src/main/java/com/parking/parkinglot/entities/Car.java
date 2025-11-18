@@ -24,6 +24,14 @@ public class Car {
         this.owner = owner;
     }
 
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public String getParkingSpot() {
+        return parkingSpot;
+    }
+
     public Long getId() {
         return id;
     }
