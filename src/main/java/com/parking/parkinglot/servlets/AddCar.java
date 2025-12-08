@@ -8,7 +8,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
-
+@ServletSecurity(@HttpConstraint(rolesAllowed = {"WRITE_CARS"}))
 @WebServlet(name = "AddCar", value = "/AddCar")
 public class AddCar extends HttpServlet {
 

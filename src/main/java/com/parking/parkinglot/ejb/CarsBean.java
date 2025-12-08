@@ -45,7 +45,7 @@ public class CarsBean {
                     car.getId(),
                     car.getLicensePlate(),
                     car.getParkingSpot(),
-                    car.getOwner().getUsername()   // ownerName from Entity
+                    car.getOwner().getUsername()
             );
 
             dtoList.add(dto);

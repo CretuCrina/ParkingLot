@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
     @OneToMany(mappedBy = "owner", orphanRemoval = true)
     private List<Car> cars = new ArrayList<>();
