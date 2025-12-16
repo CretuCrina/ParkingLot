@@ -19,14 +19,39 @@
         </a>
     </c:if>
 
-    <div class="container text-center">
-        <c:forEach var="u" items="${Users}">
-            <div class="row">
-                <div class="col">${u.username}</div>
-                <div class="col">${u.email}</div>
-            </div>
-        </c:forEach>
-    </div>
+    <form method="POST"
+          action="${pageContext.request.contextPath}/Users">
+
+        <button type="submit" class="btn btn-secondary mb-3">
+            Invoice
+        </button>
+
+        <div class="container text-center">
+            <c:forEach var="u" items="${users}">
+                <div class="row align-items-center">
+                    <div class="col-1">
+                        <input type="checkbox"
+                               name="user_ids"
+                               value="${u.id}">
+                    </div>
+                    <div class="col">${u.username}</div>
+                    <div class="col">${u.email}</div>
+                </div>
+            </c:forEach>
+        </div>
+
+    </form>
+
+
+<c:if test="${not empty invoices}">
+    <h2>Invoices</h2>
+    <c:forEach var="username" items="${invoices}" varStatus="status">
+        ${status.index+1}, ${username}
+        <br/>
+    </c:forEach>
+</c:if>
+
+
 
 </t:pageTemplate>
 
